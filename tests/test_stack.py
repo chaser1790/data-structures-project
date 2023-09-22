@@ -2,10 +2,14 @@ import unittest
 from src.stack import Stack
 
 class TestStack(unittest.TestCase):
-    """Тестовый класс для тестирования стека."""
+    """
+    Тестовый класс для тестирования стека.
+    """
 
     def test_push_pop(self):
-        """Тестирование правильности работы методов push и pop."""
+        """
+        Тестирование правильности работы методов push и pop.
+        """
         stack = Stack()
 
         stack.push('data1')
@@ -20,6 +24,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(stack.pop(), 'data4')
         self.assertEqual(stack.pop(), 'data1')
 
+        # Проверяем, что стек вызывает исключение, когда пытаемся удалить элемент из пустого стека.
         with self.assertRaises(Exception):
             stack.pop()
 

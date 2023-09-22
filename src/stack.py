@@ -1,5 +1,7 @@
 class Node:
-    """Класс для узла стека."""
+    """
+    Класс для узла стека.
+    """
 
     def __init__(self, data, next_node=None):
         """
@@ -11,12 +13,16 @@ class Node:
         self.data = data
         self.next_node = next_node
 
-
 class Stack:
-    """Класс для стека."""
+    """
+    Класс для стека.
+    """
 
     def __init__(self):
-        """Конструктор класса Stack."""
+        """
+        Конструктор класса Stack.
+        Создает пустой стек.
+        """
         self.top = None
 
     def push(self, data):
