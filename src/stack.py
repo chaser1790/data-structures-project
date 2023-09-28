@@ -42,8 +42,20 @@ class Stack:
         :raise: исключение, если стек пуст.
         """
         if self.top is None:
-            raise Exception('Stack is empty')
+            raise Exception('Стек пуст')
         else:
             data = self.top.data
             self.top = self.top.next_node
             return data
+
+    def __str__(self):
+        """
+        Магический метод для строкового представления объекта.
+        Возвращает строку, представляющую содержимое стека.
+        """
+        current = self.top
+        result = []
+        while current:
+            result.append(str(current.data))
+            current = current.next_node
+        return '\n'.join(result)
