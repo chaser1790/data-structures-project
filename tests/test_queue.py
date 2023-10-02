@@ -25,9 +25,8 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.dequeue(), 'data3')
         self.assertEqual(queue.dequeue(), 'data4')
 
-        # Проверяем, что очередь вызывает исключение, когда пытаемся извлечь элемент из пустой очереди.
-        with self.assertRaises(Exception):
-            queue.dequeue()
+        # Проверяем, что из пустой очереди возвращается None.
+        self.assertEqual(queue.dequeue(), None)
 
 if __name__ == '__main__':
     unittest.main()

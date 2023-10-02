@@ -43,24 +43,12 @@ class Queue:
         """
         Метод для удаления элемента из очереди и возвращает данные удаленного элемента.
 
-        :return: данные удаленного элемента
+        :return: данные удаленного элемента или None, если очередь пуста
         """
         if self.head is None:
-            raise Exception('Queue is empty')
+            return None
         data = self.head.data
         self.head = self.head.next_node
         if self.head is None:
             self.tail = None
         return data
-
-    def __str__(self):
-        """
-        Магический метод для строкового представления объекта.
-        Возвращает строку, представляющую элементы в очереди.
-        """
-        current = self.head
-        result = []
-        while current:
-            result.append(str(current.data))
-            current = current.next_node
-        return '\n'.join(result)
